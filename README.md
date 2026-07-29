@@ -1,9 +1,9 @@
 # Saldu — sitio público
 
-Páginas públicas de **Saldu**, la app de finanzas personales para iOS.
+Sitio estático de **Saldu**, la app de finanzas personales para iOS. Sigue la identidad visual de la app: grafito + ámbar, modo claro/oscuro y tipografía del sistema.
 
-- 🌐 Sitio: https://guilleveron.github.io/saldu-app/
-- 📄 [Política de privacidad](privacidad.md)
-- 💬 [Soporte](soporte.md) — o abrí un [issue](../../issues)
+- 🌐 https://guilleveron.github.io/saldu-app/
+- 📄 [Política de privacidad](https://guilleveron.github.io/saldu-app/privacidad)
+- 💬 [Soporte](https://guilleveron.github.io/saldu-app/soporte)
 
-El código de la app no vive en este repositorio.
+El código de la app no vive en este repositorio. Para editar el sitio: tocar los `.html`/`styles.css` y pushear a `main` (GitHub Pages publica solo).

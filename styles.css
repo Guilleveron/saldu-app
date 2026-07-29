@@ -1,0 +1,359 @@
+/* Saldu — identidad grafito + ámbar, calcada de la app (iOS 26, Liquid Glass). */
+
+:root {
+  color-scheme: light dark;
+
+  /* Ámbar exacto del AccentColor de la app (light) */
+  --ambar: #FFB020;
+  --ambar-suave: rgba(255, 176, 32, 0.14);
+
+  --fondo: #F5F5F7;            /* systemGroupedBackground */
+  --superficie: #FFFFFF;
+  --superficie-2: rgba(120, 120, 128, 0.08);
+  --texto: #1C1C1E;
+  --texto-2: rgba(60, 60, 67, 0.62);
+  --hairline: rgba(60, 60, 67, 0.14);
+  --gasto: #E5342A;
+  --ingreso: #1FA741;
+  --vidrio: rgba(245, 245, 247, 0.78);
+  --sombra: 0 1px 2px rgba(0,0,0,.05), 0 8px 28px rgba(28,28,30,.08);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Ámbar exacto del AccentColor de la app (dark) */
+    --ambar: #FFC24D;
+    --ambar-suave: rgba(255, 194, 77, 0.14);
+
+    --fondo: #131316;          /* grafito */
+    --superficie: #1C1C1F;
+    --superficie-2: rgba(120, 120, 128, 0.16);
+    --texto: #F5F5F7;
+    --texto-2: rgba(235, 235, 245, 0.62);
+    --hairline: rgba(255, 255, 255, 0.10);
+    --gasto: #FF453A;
+    --ingreso: #32D74B;
+    --vidrio: rgba(19, 19, 22, 0.72);
+    --sombra: 0 1px 2px rgba(0,0,0,.35), 0 12px 32px rgba(0,0,0,.45);
+  }
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--fondo);
+  color: var(--texto);
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* ── Barra superior: vidrio, como la app ─────────────────────── */
+
+.barra {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  background: var(--vidrio);
+  border-bottom: 0.5px solid var(--hairline);
+}
+
+.barra-contenido {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.barra a { text-decoration: none; }
+
+.marca {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--texto);
+  font-weight: 700;
+  font-size: 19px;
+  letter-spacing: -0.02em;
+}
+
+.marca img {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  display: block;
+}
+
+.barra nav {
+  margin-left: auto;
+  display: flex;
+  gap: 4px;
+}
+
+.barra nav a {
+  color: var(--texto-2);
+  font-size: 15px;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 999px;
+}
+
+.barra nav a:hover { color: var(--texto); background: var(--superficie-2); }
+
+.barra nav a[aria-current="page"] { color: var(--ambar); }
+
+/* ── Hero ─────────────────────────────────────────────────────── */
+
+.hero {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 72px 20px 40px;
+  text-align: center;
+}
+
+.hero .icono-app {
+  width: 96px;
+  height: 96px;
+  border-radius: 22px;
+  box-shadow: var(--sombra);
+  display: inline-block;
+}
+
+.hero h1 {
+  margin: 24px 0 0;
+  font-size: clamp(38px, 7vw, 56px);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+}
+
+.hero h1 .al-toque { color: var(--ambar); }
+
+.hero .bajada {
+  margin: 14px auto 0;
+  max-width: 34em;
+  font-size: 20px;
+  color: var(--texto-2);
+}
+
+/* La firma: un pago de Apple Pay que se registra solo */
+
+.movimiento {
+  margin: 40px auto 0;
+  max-width: 420px;
+  background: var(--superficie);
+  border: 0.5px solid var(--hairline);
+  border-radius: 20px;
+  box-shadow: var(--sombra);
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-align: left;
+  animation: aparecer 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) 0.4s both;
+}
+
+.movimiento .cat {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  background: var(--ambar-suave);
+  display: grid;
+  place-items: center;
+  font-size: 20px;
+  flex: none;
+}
+
+.movimiento .detalle { min-width: 0; }
+
+.movimiento .comercio {
+  font-weight: 600;
+  font-size: 16px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.movimiento .meta {
+  font-size: 13px;
+  color: var(--texto-2);
+}
+
+.movimiento .meta .solo { color: var(--ambar); font-weight: 600; }
+
+.movimiento .monto {
+  margin-left: auto;
+  font-weight: 700;
+  font-size: 17px;
+  color: var(--gasto);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+@keyframes aparecer {
+  from { opacity: 0; transform: translateY(14px) scale(0.98); }
+  to   { opacity: 1; transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .movimiento { animation: none; }
+  html { scroll-behavior: auto; }
+}
+
+.hero .nota-tienda {
+  margin-top: 28px;
+  font-size: 15px;
+  color: var(--texto-2);
+}
+
+.hero .nota-tienda strong { color: var(--texto); }
+
+/* ── Rasgos (features) ────────────────────────────────────────── */
+
+.rasgos {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 24px 20px 72px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 14px;
+}
+
+.rasgo {
+  background: var(--superficie);
+  border: 0.5px solid var(--hairline);
+  border-radius: 20px;
+  padding: 22px;
+}
+
+.rasgo .emoji { font-size: 26px; }
+
+.rasgo h3 {
+  margin: 10px 0 4px;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.rasgo p {
+  margin: 0;
+  font-size: 15px;
+  color: var(--texto-2);
+}
+
+/* ── Documentos (privacidad, soporte) ─────────────────────────── */
+
+.documento {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 56px 20px 80px;
+}
+
+.documento header h1 {
+  margin: 0;
+  font-size: clamp(30px, 5vw, 40px);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+.documento header .fecha {
+  display: block;
+  margin-top: 10px;
+  font-size: 15px;
+  color: var(--texto-2);
+}
+
+.documento h2 {
+  margin: 44px 0 10px;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.documento h3 {
+  margin: 26px 0 6px;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.documento p, .documento li { color: var(--texto); }
+
+.documento .intro { color: var(--texto-2); font-size: 18px; }
+
+.documento a { color: var(--ambar); text-decoration: none; font-weight: 600; }
+.documento a:hover { text-decoration: underline; }
+
+.documento ul { padding-left: 22px; }
+.documento li { margin: 6px 0; }
+
+.tarjeta-clave {
+  background: var(--superficie);
+  border: 0.5px solid var(--hairline);
+  border-radius: 20px;
+  padding: 20px 22px;
+  margin: 24px 0;
+}
+
+.tarjeta-clave ul { margin: 0; padding-left: 20px; }
+.tarjeta-clave li { margin: 8px 0; font-weight: 600; }
+.tarjeta-clave li::marker { color: var(--ambar); }
+
+.contacto {
+  display: inline-block;
+  margin-top: 6px;
+  background: var(--ambar);
+  color: #1C1C1E;
+  font-weight: 700;
+  padding: 12px 22px;
+  border-radius: 999px;
+  text-decoration: none;
+}
+
+.contacto:hover { filter: brightness(1.06); text-decoration: none; }
+
+a.contacto { color: #1C1C1E; }
+
+/* ── Pie ──────────────────────────────────────────────────────── */
+
+footer {
+  border-top: 0.5px solid var(--hairline);
+  padding: 28px 20px 44px;
+}
+
+.pie-contenido {
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 20px;
+  font-size: 14px;
+  color: var(--texto-2);
+}
+
+.pie-contenido a { color: var(--texto-2); text-decoration: none; font-weight: 600; }
+.pie-contenido a:hover { color: var(--texto); }
+
+.pie-contenido .copy { margin-left: auto; }
+
+/* Accesibilidad */
+:focus-visible {
+  outline: 2px solid var(--ambar);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+@media (max-width: 520px) {
+  .hero { padding-top: 52px; }
+  .pie-contenido .copy { margin-left: 0; }
+}
