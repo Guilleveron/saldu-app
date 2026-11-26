@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Política de privacidad — Saldu</title>
-<meta name="description" content="Política de privacidad de Saldu: tus datos financieros viven en tu iPhone y tu iCloud privado, jamás en servidores nuestros.">
+<meta name="description" content="Política de privacidad de Saldu: tus datos financieros viven en tu dispositivo y tu iCloud privado, jamás en servidores nuestros.">
 <link rel="icon" type="image/png" href="icon-light.png">
 <link rel="icon" type="image/png" href="icon-dark.png" media="(prefers-color-scheme: dark)">
 <link rel="apple-touch-icon" href="icon-light.png">
@@ -31,15 +31,15 @@
 <main class="documento">
   <header>
     <h1>Política de privacidad</h1>
-    <span class="fecha">Última actualización: 29 de julio de 2026</span>
+    <span class="fecha">Última actualización: 20 de noviembre de 2026</span>
   </header>
 
-  <p class="intro">Saldu es una app de finanzas personales para iOS desarrollada por Guillermo Verón Fernández (Paraguay). Esta política explica, sin vueltas, qué datos maneja la app y qué hacemos — y sobre todo, qué <strong>no</strong> hacemos — con ellos.</p>
+  <p class="intro">Saldu es una app de finanzas personales para iPhone, iPad y Mac desarrollada por Guillermo Verón Fernández (Paraguay). Esta política explica, sin vueltas, qué datos maneja la app y qué hacemos — y sobre todo, qué <strong>no</strong> hacemos — con ellos.</p>
 
   <div class="tarjeta-clave">
     <ul>
       <li>Tus datos financieros viven en tu iPhone y en tu iCloud privado. Jamás pasan por servidores nuestros — no tenemos servidores.</li>
-      <li>No vendemos, alquilamos ni compartimos tus datos. Con nadie, nunca.</li>
+      <li>No vendemos, alquilamos ni compartimos tus datos. Con nadie, nunca. Lo único que puede salir de tu dispositivo hacia un tercero es lo que vos le mandes al asistente de IA, si decidís activarlo con tu propia clave (ver más abajo).</li>
       <li>No hay publicidad ni SDKs de publicidad en la app.</li>
       <li>No te rastreamos entre apps ni sitios web.</li>
     </ul>
@@ -52,9 +52,27 @@
 
   <h3>Fotos de recibos</h3>
   <p>Se guardan junto a tus datos, en tu dispositivo y tu iCloud privado. Nunca salen de ahí.</p>
+  <p>Cuando Saldu lee un recibo o un comprobante (el monto, a quién le pagaste, la fecha, el concepto y el medio de pago), lo hace con el reconocimiento de texto del propio dispositivo: la foto no se envía a ningún servicio, ni nuestro ni de terceros.</p>
+
+  <h3>Lo que compartís hacia Saldu</h3>
+  <p>Si mandás una foto o un texto desde otra app a Saldu con la hoja de compartir, queda guardado en el espacio de la app en tu dispositivo hasta que abrís Saldu y lo usás o lo descartás.</p>
 
   <h3>Perfil (apodo y avatar)</h3>
-  <p>Se guardan en el llavero de valores de iCloud de tu cuenta, solo para que aparezcan en tus propios dispositivos.</p>
+  <p>El avatar puede ser un emoji, un ícono o una foto chica que elegís de tu galería. Se guardan en el llavero de valores de iCloud de tu cuenta, solo para que aparezcan en tus propios dispositivos.</p>
+
+  <h3>Asistente de IA (opcional)</h3>
+  <p>Saldu no incluye ningún modelo de IA ni tiene servidores. El asistente está apagado hasta que vos conectás un proveedor (por ejemplo Google Gemini, Anthropic, OpenAI, xAI, Alibaba, OpenRouter, Groq o un modelo en tu propia computadora) con <strong>tu propia clave de API</strong>. Antes de la primera conversación, la app te muestra qué se envía y a quién, y te pide que lo aceptes.</p>
+  <ul>
+    <li><strong>Qué se envía</strong>: lo que escribís o dictás al asistente, y los datos de Saldu que necesita para responder esa pregunta (por ejemplo, tus gastos del mes o un presupuesto). No se envía toda tu base de datos.</li>
+    <li><strong>A quién</strong>: directo desde tu dispositivo al proveedor que elegiste. No pasa por nosotros y no vemos tus conversaciones. Lo que el proveedor hace con esos datos lo rigen <strong>sus</strong> términos y su política de privacidad (algunos niveles gratuitos permiten que el proveedor use lo enviado para mejorar sus productos).</li>
+    <li><strong>Tu clave</strong> queda guardada solo en el llavero de tu dispositivo.</li>
+    <li><strong>Dictado</strong>: si le hablás al asistente, la voz se convierte en texto con el reconocimiento de voz de Apple.</li>
+    <li><strong>Siri y Atajos</strong>: las consultas que le hacés a Saldu por Siri usan el mismo asistente y siguen las mismas reglas. Se pueden apagar en Ajustes → Asistente.</li>
+    <li><strong>Desconectarlo</strong>: en Ajustes → Asistente, en cualquier momento. Se borra la clave de tu dispositivo.</li>
+  </ul>
+
+  <h3>Búsqueda del iPhone (Spotlight)</h3>
+  <p>Si está activada, Saldu agrega tus movimientos recientes al índice de búsqueda <strong>de tu propio dispositivo</strong>, para que los encuentres desde la búsqueda del iPhone. Ese índice no sale del dispositivo. No se crea si tenés activo el bloqueo con Face ID, no muestra montos si tenés "Ocultar montos" encendido y se borra al apagar la opción en Ajustes.</p>
 
   <h3>Respaldo en Google Drive (opcional)</h3>
   <p>Si iniciás sesión con Google, la app puede guardar un archivo de respaldo en la <strong>carpeta privada de datos de aplicación de tu propio Google Drive</strong> (<code>appDataFolder</code>). Ese archivo solo es accesible desde Saldu con tu cuenta; nosotros no lo vemos. Podés borrar los respaldos desde la app cuando quieras.</p>
@@ -74,7 +92,7 @@
   <p>Las suscripciones se procesan íntegramente por <strong>Apple</strong> vía App Store. No vemos ni almacenamos datos de pago. La app solo consulta a Apple si tenés una suscripción activa.</p>
 
   <h2>Notificaciones</h2>
-  <p>Los recordatorios y avisos se generan <strong>localmente</strong> en tu dispositivo. No usamos notificaciones push con contenido nuestro.</p>
+  <p>Los recordatorios y avisos se generan <strong>localmente</strong> en tu dispositivo. Las acciones que tocás desde un aviso (por ejemplo, "Marcar pagado") se guardan en tu dispositivo como cualquier otro registro. No usamos notificaciones push con contenido nuestro.</p>
 
   <h2>Tus derechos y tu control</h2>
   <ul>
